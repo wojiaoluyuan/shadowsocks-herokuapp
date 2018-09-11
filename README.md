@@ -1,3 +1,4 @@
+到目前还能用，us比eu的要快，本人PC系统是opensuse,配合privoxy可以实现全局代理，手机为安卓6.0,使用termux,配合privoxy,然后设计wifi代理，或者设置手机网络的接受点（APN），同样也可以实现全局代理，一定要先运行node,再运行privoxy.
 shadowsocks-heroku
 ==================
 
