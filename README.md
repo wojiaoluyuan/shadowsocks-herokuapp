@@ -1,4 +1,5 @@
-到目前还能用，us比eu的要快，本人PC系统是opensuse,配合privoxy可以实现全局代理，手机为安卓6.0,使用termux,配合privoxy,然后设计wifi代理，或者设置手机网络的接受点（APN），同样也可以实现全局代理，一定要先运行node,再运行privoxy.
+到目前还能用，us比eu的要快，本人PC系统是opensuse,配合privoxy可以实现全局代理，手机为安卓6.0,使用termux,配合privoxy,然后设置wifi代理，或者设置手机网络的接受点（APN），同样也可以实现全局代理，一定要先运行node项目,再运行privoxy.
+
 shadowsocks-heroku
 ==================
 
@@ -14,23 +15,14 @@ Heroku
 ### Usage
 
 ```
-$ heroku create
-Creating still-tor-8707... done, stack is cedar-14
-http://still-tor-8707.herokuapp.com/ | git@heroku.com:still-tor-8707.git
-```
-
-Push the code to Heroku.
-
-```
+本地上传
+$ heroku create  yourappname  //或者直接在heroku 的网页后台创建app
+$ cd shadowsocks-heroku
+$ git init
+$ heroku git:remote -a yourappname
+$ git add .
+$ git commit -am "make it better"
 $ git push heroku master
-…
------> Compressing... done, 5.1MB
------> Launching... done, v3
-       http://still-tor-8707.herokuapp.com/ deployed to Heroku
-
-To git@heroku.com:still-tor-8707.git
- * [new branch]      master -> master
-```
 
 Set a few configs:
 
@@ -40,36 +32,7 @@ Setting config vars and restarting still-tor-8707... done, v11
 KEY:    foobar
 METHOD: rc4
 ```
-
-Install project dependencies with `npm install`:
-
-```
-$ npm install
-…
-```
-
-Then run:
-
-```
-$ node local.js -s still-tor-8707.herokuapp.com -l 1080 -m rc4 -k foobar -r 80
-server listening at { address: '127.0.0.1', family: 'IPv4', port: 1080 }
-```
-
-Change proxy settings of your browser into:
-
-```
-SOCKS5 127.0.0.1:1080
-```
-
-### Troubleshooting
-
-If there is something wrong, you can check the logs by:
-
-```
-$ heroku logs -t --app still-tor-8707
-```
-
-Supported Ciphers
+Supported Ciphers //支持以下几种加密方式
 -----------------
 
 - rc4
@@ -87,3 +50,32 @@ Supported Ciphers
 - camellia-256-cfb
 - camellia-192-cfb
 - camellia-128-cfb
+
+Install project dependencies with `npm install`:
+
+```
+$ npm install //本地安装
+…
+```
+
+Then run:
+
+```
+$ node local.js -s yorappname.herokuapp.com -l 1080 -m rc4 -k foobar -r 80
+server listening at { address: '127.0.0.1', family: 'IPv4', port: 1080 }
+```
+
+Change proxy settings of your browser into:
+
+```
+SOCKS5 127.0.0.1:1080
+```
+
+### Troubleshooting
+
+If there is something wrong, you can check the logs by:
+
+```
+$ heroku logs -t --app still-tor-8707
+```
+
