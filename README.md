@@ -23,15 +23,8 @@ $ heroku git:remote -a yourappname
 $ git add .
 $ git commit -am "make it better"
 $ git push heroku master
-
-Set a few configs:
-
-```
 $ heroku config:set METHOD=rc4 KEY=foobar
-Setting config vars and restarting still-tor-8707... done, v11
-KEY:    foobar
-METHOD: rc4
-```
+
 Supported Ciphers //支持以下几种加密方式
 -----------------
 
@@ -51,16 +44,7 @@ Supported Ciphers //支持以下几种加密方式
 - camellia-192-cfb
 - camellia-128-cfb
 
-Install project dependencies with `npm install`:
-
-```
 $ npm install //本地安装
-…
-```
-
-Then run:
-
-```
 $ node local.js -s yorappname.herokuapp.com -l 1080 -m rc4 -k foobar -r 80
 server listening at { address: '127.0.0.1', family: 'IPv4', port: 1080 }
 ```
@@ -76,6 +60,6 @@ SOCKS5 127.0.0.1:1080
 If there is something wrong, you can check the logs by:
 
 ```
-$ heroku logs -t --app still-tor-8707
+$ heroku logs -t --app yourappname
 ```
 
