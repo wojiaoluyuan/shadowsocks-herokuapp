@@ -1,4 +1,4 @@
-到目前还能用，us比eu的要快，本人PC系统是opensuse,配合privoxy可以实现全局代理，手机为安卓6.0,使用termux,配合privoxy,然后设置wifi代理，或者设置手机网络的接受点（APN），同样也可以实现全局代理，一定要先运行node项目,再运行privoxy.
+到目前还能用，us比eu的要快，本人PC系统是opensuse,配合privoxy可以实现全局代理，手机为安卓6.0,也可以配合privoxy,然后设置wifi代理，或者设置手机网络的接受点（APN），同样也可以实现全局代理，一定要先运行node项目,再运行privoxy.
 
 shadowsocks-heroku
 ==================
@@ -16,9 +16,10 @@ Heroku
 
 ```
 首先将本项目下载并解压
+$ cd shadowsocks-herokuapp    //在项目中打开一个shell并进入到解压的项目中
 本地上传
+$ heroku login  //登录你的heroku账号
 $ heroku create  yourappname  //或者直接在heroku 的网页后台创建app
-$ cd shadowsocks-herokuapp    //进入到解压的项目中
 $ git init
 $ heroku git:remote -a yourappname
 $ git add .
