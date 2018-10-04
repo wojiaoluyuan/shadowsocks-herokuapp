@@ -15,9 +15,10 @@ Heroku
 ### Usage
 
 ```
+首先将本项目下载并解压
 本地上传
 $ heroku create  yourappname  //或者直接在heroku 的网页后台创建app
-$ cd shadowsocks-heroku
+$ cd shadowsocks-herokuapp    //进入到解压的项目中
 $ git init
 $ heroku git:remote -a yourappname
 $ git add .
